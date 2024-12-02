@@ -1,4 +1,23 @@
-document.addEventListener('DOMContentLoaded', function() {
+AOS.init({
+  disable: false,
+  startEvent: "DOMContentLoaded",
+  initClassName: "aos-init",
+  animatedClassName: "aos-animate",
+  useClassNames: false,
+  disableMutationObserver: false,
+  debounceDelay: 50,
+  throttleDelay: 99,
+
+  offset: 120,
+  delay: 0,
+  duration: 1800,
+  easing: "ease",
+  once: false,
+  mirror: false,
+  anchorPlacement: "top-bottom",
+});
+
+document.addEventListener("DOMContentLoaded", function () {
   const activeImg = document.getElementById("active-img");
   const activeTitle = document.getElementById("active-title");
   const activeDesc = document.getElementById("active-desc");
@@ -8,22 +27,22 @@ document.addEventListener('DOMContentLoaded', function() {
   if (media.matches) {
     vrImg.appendChild(activeDesc);
   }
-    vrItems.forEach((item) => {
-      item.addEventListener("click", () => {
-        const newImgSrc = item.querySelector("img").src;
-        const newDesc = item.querySelector("p").innerText;
-        const oldImgSrc = activeImg.src;
-        const oldDesc = activeDesc.innerText;
+  vrItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      const newImgSrc = item.querySelector("img").src;
+      const newDesc = item.querySelector("p").innerText;
+      const oldImgSrc = activeImg.src;
+      const oldDesc = activeDesc.innerText;
 
-        activeImg.src = newImgSrc;
-        activeDesc.innerText = newDesc;
+      activeImg.src = newImgSrc;
+      activeDesc.innerText = newDesc;
 
-        item.querySelector("img").src = oldImgSrc;
-        item.querySelector("p").innerText = oldDesc;
+      item.querySelector("img").src = oldImgSrc;
+      item.querySelector("p").innerText = oldDesc;
 
-        rotateItems(item.getAttribute("data-index"));
-      });
+      rotateItems(item.getAttribute("data-index"));
     });
+  });
 
   function rotateItems(activeIndex) {
     const itemsArray = Array.from(vrItems);
@@ -51,4 +70,4 @@ document.addEventListener('DOMContentLoaded', function() {
       item.setAttribute("data-index", newIndex);
     });
   }
-})
+});
