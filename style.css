@@ -155,24 +155,30 @@ button {
   display: flex;
   gap: 40px;
 }
-.person-main > div {
+.person-item {
   flex-basis: 50%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.person-item > div:nth-child(1) {
+  flex: 1;
 }
 .person-item h3 {
   font-size: 28px;
   text-transform: uppercase;
   background: linear-gradient(to right, #e7722b, #e65612);
-  padding: 6px 50px;
+  padding: 6px 20px;
   border-radius: 50px;
-  width: fit-content;
+  width: 100%;
   margin: 0px auto;
   font-weight: 500;
   font-family: var(--font-primary);
 }
 .person-item strong {
   margin: 10px 0px;
-  font-size: 16px;
+  font-size: 14px;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
@@ -180,7 +186,7 @@ button {
 }
 .person-item p {
   font-family: var(--font-secondary);
-  font-size: 24px;
+  font-size: 18px;
   max-width: 400px;
   margin: 0px auto;
   font-weight: 300;
@@ -219,12 +225,10 @@ button {
   max-width: 700px;
 }
 .know-item-img img {
-  height: 100%;
-  mix-blend-mode: screen;
+  mix-blend-mode: lighten;
 }
-
 .know-item-content {
-  max-width: 610px;
+  max-width: 540px;
   padding: 40px;
   width: 100%;
   display: flex;
@@ -343,6 +347,7 @@ button {
 }
 .field3 label {
   display: flex;
+  align-items: center;
   height: auto;
   gap: 10px;
   position: relative;
@@ -355,7 +360,7 @@ button {
   font-size: 20px;
   color: #0d334c;
 }
-.field3 label input[type="checkbox"] {
+.field3 label input[type="radio"] {
   appearance: none;
   width: 30px;
   height: 30px;
@@ -364,7 +369,7 @@ button {
   min-height: 30px;
   padding: 0;
 }
-.field3 label input[type="checkbox"]:checked {
+.field3 label input[type="radio"]:checked {
   background-color: #fff;
 }
 .field4 p {
@@ -382,6 +387,7 @@ button {
   color: #fff;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 /* hot */
 .hot-slider-item {
@@ -636,7 +642,16 @@ footer {
 .logo-footer {
   display: flex;
   justify-content: center;
-  padding: 50px 0px;
+  gap: 20px;
+  align-items: center;
+  padding: 20px 0px;
+}
+.logo-footer  p {
+  font-size: 44px;
+  text-transform: uppercase;
+}
+.logo-footer img {
+  max-width: 200px;
 }
 .footer-info p {
   text-align: center;
@@ -671,7 +686,7 @@ footer {
   .field3 p {
     font-size: 20px;
   }
-  .field3 label input[type="checkbox"] {
+  .field3 label input[type="radio"] {
     width: 25px;
     height: 25px;
     min-height: 25px;
@@ -714,6 +729,19 @@ footer {
   .vr-item p {
     font-size: 16px;
   }
+  .field3 label:before {
+    top: -3px;
+    left: 5px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .person-main {
+    flex-direction: column;
+  }
+  .person-item h3 {
+    width: fit-content;
+    padding: 6px 50px;
+  }
 }
 @media screen and (max-width: 830px) {
   .sm {
@@ -727,8 +755,9 @@ footer {
     position: relative;
     gap: 0;
   }
-  .hero-inner h2 img:first-child {
+  .hero-inner h2 img:nth-child(3) {
     width: 60%;
+    margin: 0px auto;
   }
   .hero-content h3 {
     font-size: 24px;
@@ -797,10 +826,14 @@ footer {
     aspect-ratio: 16/9;
     object-fit: cover;
   }
+  .logo-footer p {
+    font-size: 32px;
+  }
 }
 @media screen and (max-width: 640px) {
   .hero-list-text {
     grid-template-columns: 1fr;
+    margin-top: 20px;
   }
   .hero-list-text li {
     padding: 35px;
@@ -842,7 +875,7 @@ footer {
     font-size: 12px;
   }
   .person-item p {
-    font-size: 20px;
+    font-size: 16px;
   }
   .person::before {
     top: -80px;
@@ -893,7 +926,7 @@ footer {
   .field4 p {
     font-size: 16px;
   }
-  .field3 label input[type="checkbox"] {
+  .field3 label input[type="redio"] {
     width: 20px;
     height: 20px;
     min-height: 20px;
@@ -901,7 +934,7 @@ footer {
   .field3 label:before {
     top: -1px;
     left: 5px;
-    font-size: 16px;
+    font-size: 18px;
   }
   .form-btn {
     font-size: 20px;
@@ -1035,12 +1068,24 @@ footer {
     padding: 20px 0px;
   }
   .logo-footer img {
-    max-width: 60%;
+    max-width: 50%;
   }
   .footer-info p {
     font-size: 16px;
   }
   .hot-slider-item:before {
     height: 300px;
+  }
+  .logo-footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .logo-footer a {
+    display: flex;
+    justify-content: center;
+  }
+  .logo-footer p {
+    font-size: 22px;
+    text-align: center;
   }
 }

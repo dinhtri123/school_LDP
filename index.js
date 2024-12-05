@@ -70,4 +70,14 @@ document.addEventListener("DOMContentLoaded", function () {
       item.setAttribute("data-index", newIndex);
     });
   }
+  const inputTel = document.querySelector(".input-tel");
+   inputTel.addEventListener("input", (event) => {
+     inputTel.value = inputTel.value.replace(/[^0-9]/g, "");
+   });
+   inputTel.addEventListener("paste", (event) => {
+     const pasteData = event.clipboardData.getData("text");
+     if (!/^\d+$/.test(pasteData)) {
+       event.preventDefault();
+     }
+   });
 });
