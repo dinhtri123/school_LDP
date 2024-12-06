@@ -14,6 +14,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body {
   font-family: var(--font-primary);
@@ -52,12 +53,18 @@ button {
   background-image: url("./images/banner-top.png");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 50px 0px;
+  padding-bottom: 50px;
 }
 .hero-inner {
   display: flex;
   gap: 50px;
   text-align: center;
+}
+.hero .logo-footer {
+  margin-bottom: 30px;
+}
+.hero .logo-footer img {
+  max-width: 300px;
 }
 .hero-inner > div {
   flex-basis: 50%;
@@ -84,8 +91,9 @@ button {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   font-family: var(--font-secondary);
-  padding: 20px 10px;
-  font-size: 14px;
+  padding: 20px 15px;
+  font-size: 12px;
+  line-height: 16px;
   text-transform: uppercase;
   font-weight: bold;
   display: flex;
@@ -187,7 +195,7 @@ button {
 .person-item p {
   font-family: var(--font-secondary);
   font-size: 18px;
-  max-width: 400px;
+  max-width: 340px;
   margin: 0px auto;
   font-weight: 300;
 }
@@ -228,7 +236,7 @@ button {
   mix-blend-mode: lighten;
 }
 .know-item-content {
-  max-width: 540px;
+  max-width: 558px;
   padding: 40px;
   width: 100%;
   display: flex;
@@ -733,6 +741,9 @@ footer {
     top: -3px;
     left: 5px;
   }
+  .hero-list-text {
+    gap: 20px;
+  }
 }
 @media screen and (max-width: 1024px) {
   .person-main {
@@ -768,9 +779,13 @@ footer {
   }
   .person-main {
     flex-direction: column;
+    gap: 0;
   }
   .person-main > div {
     flex-basis: 100%;
+  }
+  .person-main .person-item:nth-child(2) {
+    order: -1;
   }
   .know-item,
   .know-item:nth-child(2n) {
@@ -837,6 +852,8 @@ footer {
   }
   .hero-list-text li {
     padding: 35px;
+    font-size: 14px;
+    line-height: 20px;
   }
   .hero-list-text {
     gap: 20px;
@@ -875,7 +892,7 @@ footer {
     font-size: 12px;
   }
   .person-item p {
-    font-size: 16px;
+    font-size: 17px;
   }
   .person::before {
     top: -80px;
@@ -1087,5 +1104,8 @@ footer {
   .logo-footer p {
     font-size: 22px;
     text-align: center;
+  }
+  .hero .logo-footer img {
+    max-width: 50%;
   }
 }
