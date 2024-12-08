@@ -81,6 +81,9 @@ button {
   margin: 0px auto;
   padding: 6px 30px;
 }
+.hero-content h2 img {
+  margin: 0px auto
+}
 .hero-list-text {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
